@@ -12,3 +12,26 @@ Ela tem três estados:
 - <b>Pending (pendente)</b> – ainda não finalizou
 - <b>Resolved (resolvida)</b> – operação concluída com sucesso
 - <b>Rejected (rejeitada)</b> – houve um erro
+
+### Exemplo de Promise em TypeScript
+
+     function buscarDados(): Promise<string> {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const sucesso = true;
+          if (sucesso) resolve("Dados carregados!");
+          else reject("Erro ao buscar dados.");
+         }, 2000);
+      });
+    }
+
+      // Usando a Promise com .then() e .catch()
+        buscarDados()
+         .then((dados) => console.log(dados))
+         .catch((erro) => console.error(erro));
+
+
+     // Usando a Promise com .then() e .catch()
+       buscarDados()
+         .then((dados) => console.log(dados))
+         .catch((erro) => console.error(erro));
